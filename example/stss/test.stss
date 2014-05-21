@@ -1,0 +1,43 @@
+
+/* 
+ *	Classname rules 
+ *	Line 2
+ *	Line 3
+ */
+.classname {
+	@media ios and (handheld) {
+		width: Ti.UI.SIZE;
+		shadow-color: #111111; 
+		shadowOffset: {
+			x:1;
+			y:3;
+		};
+	}
+}
+
+/*
+ A multi-line comment
+ */
+
+/*
+ * Multi-selector comment
+ * Line2
+ */
+@media (platform: ios), (platform: android) {
+	#aWindow {
+		background-color: #555;
+	}
+
+	button {
+		height: size;
+	}
+}
+
+.classname, button {
+	color: green;
+}
+
+button {
+	height: 10dp;
+	text-align: center;
+}

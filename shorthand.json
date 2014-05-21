@@ -1,0 +1,26 @@
+{
+	"declarations": {
+		"width": {
+			"fill": "Ti.UI.FILL",
+			"size": "Ti.UI.SIZE"
+		},
+		"height": {
+			"fill": "Ti.UI.FILL",
+			"size": "Ti.UI.SIZE"
+		},
+		"textAlign": {
+			"left": "Ti.UI.TEXT_ALIGNMENT_LEFT",
+			"right": "Ti.UI.TEXT_ALIGNMENT_RIGHT",
+			"center": "Ti.UI.TEXT_ALIGNMENT_CENTER"
+		}
+	},
+
+	"queries": {
+		"android": "platform=android",
+		"blackberry": "platform=blackberry",
+		"ios": "platform=ios",
+		"mobileweb": "platform=mobileweb",
+		"handheld": "formFactor=handheld",
+		"tablet": "formFactor=handheld"
+	}
+}

@@ -1,0 +1,40 @@
+{
+  "name": "STSS",
+  "description": "Parses STSS to Titanium Alloy TSS (using SASS)",
+  "version": "0.0.1",
+  "private": true,
+  "keywords": [
+    "titanium",
+    "alloy",
+    "sass",
+    "stss"
+    "tss"
+  ],
+  "main": "./lib/render",
+  "bin": {
+    "stss": "./bin/stss"
+  },
+  "author": "Ronald Treur <ronald@lostparticle.net> (http://lostparticle.net)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RonaldTreur/STSS.git"
+  },
+  "homepage": "https://github.com/RonaldTreur/STSS",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-contrib-watch": "~0.6.1",
+    "load-grunt-config": "^0.8.0",
+    "time-grunt": "^0.3.1",
+    "grunt-newer": "^0.7.0",
+    "jit-grunt": "^0.5.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "jshint-stylish": "^0.2.0"
+  },
+  "dependencies": {
+    "node-sass": "^0.8.6",
+    "css-parse": "^1.7.0",
+    "yargs": "^1.2.2",
+    "chalk": "^0.4.0"
+  }
+}
