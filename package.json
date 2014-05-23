@@ -10,11 +10,19 @@
     "stss",
     "tss"
   ],
-  "main": "./lib/render",
+  "main": "./stss.js",
   "bin": {
     "stss": "./bin/stss"
   },
-  "author": "Ronald Treur <ronald@lostparticle.net> (http://lostparticle.net)",
+  "bugs": {
+    "url": "https://github.com/RonaldTreur/STSS/issues",
+    "email": "ronald@lostparticle.net"
+  },
+  "author": {
+    "name": "Ronald Treur",
+    "email": "ronald@lostparticle.net",
+    "url": "http://lostparticle.net"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/RonaldTreur/STSS.git"
