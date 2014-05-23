@@ -7,7 +7,7 @@
     "titanium",
     "alloy",
     "sass",
-    "stss"
+    "stss",
     "tss"
   ],
   "main": "./lib/render",
@@ -29,12 +29,18 @@
     "grunt-newer": "^0.7.0",
     "jit-grunt": "^0.5.0",
     "grunt-contrib-jshint": "^0.10.0",
-    "jshint-stylish": "^0.2.0"
+    "jshint-stylish": "^0.2.0",
+    "mocha": "^1.19.0",
+    "should": "^3.3.1",
+    "chai": "^1.9.1"
   },
   "dependencies": {
     "node-sass": "^0.8.6",
     "css-parse": "^1.7.0",
     "yargs": "^1.2.2",
     "chalk": "^0.4.0"
+  },
+  "scripts": {
+    "test": "mocha --require test/support/env --reporter dot --check-leaks test/ test/acceptance/"
   }
 }
