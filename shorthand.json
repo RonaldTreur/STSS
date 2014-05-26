@@ -1,5 +1,5 @@
 {
-	"declarations": {
+	"propertyValues": {
 		"width": {
 			"fill": "Ti.UI.FILL",
 			"size": "Ti.UI.SIZE"
@@ -14,7 +14,14 @@
 			"center": "Ti.UI.TEXT_ALIGNMENT_CENTER"
 		}
 	},
-
+	"propertyNames": {
+		"font": {
+			"family": "fontFamily",
+			"size": "fontSize",
+			"style": "fontStyle",
+			"weight": "fontWeight"
+		}
+	},
 	"queries": {
 		"android": "platform=android",
 		"blackberry": "platform=blackberry",
