@@ -1,12 +1,12 @@
 {
-  "name": "STSS",
-  "description": "Parses STSS to Titanium Alloy TSS (using SASS)",
-  "version": "0.0.1",
-  "private": true,
+  "name": "stss",
+  "description": "Use SCSS to generate your Titanium Alloy TSS",
+  "version": "0.1.0",
   "keywords": [
     "titanium",
     "alloy",
     "sass",
+    "scss",
     "stss",
     "tss"
   ],
@@ -40,7 +40,8 @@
     "jshint-stylish": "^0.2.0",
     "mocha": "^1.19.0",
     "should": "^3.3.1",
-    "chai": "^1.9.1"
+    "chai": "^1.9.1",
+    "grunt-mocha-test": "^0.10.2"
   },
   "dependencies": {
     "node-sass": "^0.8.6",
@@ -49,6 +50,6 @@
     "chalk": "^0.4.0"
   },
   "scripts": {
-    "test": "mocha --require test/support/env --reporter dot --check-leaks test/ test/acceptance/"
+    "test": "grunt test"
   }
 }
