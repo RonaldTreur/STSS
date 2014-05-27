@@ -26,8 +26,15 @@ function render(stss, options) {
 
 /**
  * Render STSS to TSS using the supplied instructions.
+ *
+ * Either options.data or options.file need to be provided. If both are supplied, data takes precedence and file
+ * will be ignored.
  * 
- * @param 	{Object}	options		Dictionary containing instructions
+ * @param 	{Object}	options			Dictionary containing instructions
+ * @param 	{String} 	[options.data]	STSS data, required if options.file is not passed
+ * @param 	{String} 	[options.file]	STSS file that is to be converted
+ * @param 	{Function} 	options.success Callback that will be called upon successful conversion
+ * @param  	{Function}	[options.error]	Callback that will be called if conversion fails
  */
 module.exports = function(options) {
 	var tss;
@@ -37,11 +44,15 @@ module.exports = function(options) {
 		options.success(tss);
 	} else if (options.file) {
 		fs.readFile(options.file, {encoding: 'utf8'}, function(err, data) {
-			if (err) { return options.error(err); }
-			tss = render(data, options);
+			if (err) { return options.error && options.error(err); }
+			try {
+				tss = render(data, options);
+			} catch (e) {
+				return options.error && options.error(e);
+			}
 			options.success(tss);
 		});
 	} else {
-		return options.error('No input file or data supplied');
+		return options.error && options.error('No input file or data supplied');
 	}
 };
