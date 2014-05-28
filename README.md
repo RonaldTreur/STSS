@@ -1,5 +1,7 @@
 # STSS
 
+[![NPM version](https://badge.fury.io/js/stss.svg)](http://badge.fury.io/js/stss)
+
 Write your Titanium Alloy stylesheets using SCSS (Sassy CSS) syntax.
 
 ## Get Sassy
@@ -91,14 +93,14 @@ stss({
 
 `error` is a `Function` that will be called upon occurrence of an error when rendering the STSS to TSS. This option is optional, but it's the only way to know an error occurred.
 
-## Usage - Syntax
+## SCSS Extensions
 
 
-Below is a description of the primary features of STSS (on top of SCSS).
+Below is a description of the primary features that have been added to STSS.
 
 ### Quotes
 
-Similar to CSS and SCSS, only actual String-values need to be quoted. In practice this means only `text`-property values should be quoted. However, quotes (both single and double) are permitted. For example, this is allowed:
+Similar to CSS and SCSS, only actual String-values need to be quoted. In practice this means only `text`-property values should be quoted. However, quotes (both single and double) are permitted. For example, this is perfectly fine:
 
 ```css
 Label {
@@ -257,6 +259,14 @@ For your convenience a number of (often used) queries have been shortened as wel
 - **handheld**: `formfactor=handheld`
 - **tablet**: `formfactor=tablet`
 
+For example:
+
+```css
+Label[ios handheld] {
+	backgroundColor: #f00;
+	text: 'iPhone';
+}
+```
 
 ### Queries
 
@@ -322,7 +332,7 @@ For those interested, below is a basic outline of how conversion currently works
 ### STSS 2 SCSS:
 
 1. Convert all hyphenated terms to camelCase (e.g. background-color to backgroundColor)
-2. Quote all unquoted Ti.* and Alloy.* strings
+2. Quote all unquoted Ti.\* and Alloy.\* strings
 3. Convert regular TSS queries to split TSS queries
 
 ### SCSS 2 CSS:
@@ -338,4 +348,4 @@ For those interested, below is a basic outline of how conversion currently works
 
 ### AST 2 TSS:
 
-1. Unquote all Ti.* and Alloy.* statements
+1. Unquote all Ti.\* and Alloy.\* statements
