@@ -29,5 +29,6 @@
 		"mobileweb": "platform=mobileweb",
 		"handheld": "formFactor=handheld",
 		"tablet": "formFactor=handheld"
-	}
+	},
+	"queryValues": {}
 }
