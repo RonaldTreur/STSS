@@ -1,0 +1,6 @@
+Label {
+	@media (platform: ios) and (formFactor: handheld) {
+		backgroundColor: #f00;
+		text: 'iPhone';
+	}
+}

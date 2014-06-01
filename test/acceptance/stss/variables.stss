@@ -1,0 +1,6 @@
+$color 			: #FFF;
+$color_rgba 	: rgba(255,255,255,1);
+
+b {
+	color: $color;
+}

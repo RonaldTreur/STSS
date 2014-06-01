@@ -1,0 +1,4 @@
+Label[platform=ios][formFactor=handheld] {
+	backgroundColor: #f00;
+	text: 'iPhone';
+}
