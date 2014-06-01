@@ -1,6 +1,7 @@
 # STSS
 
 [![NPM version](https://badge.fury.io/js/stss.svg)](http://badge.fury.io/js/stss)
+[![Build Status](https://travis-ci.org/RonaldTreur/STSS.svg?branch=master)](http://travis-ci.org/RonaldTreur/STSS)
 
 Write your Titanium Alloy stylesheets using SCSS (Sassy CSS) syntax.
 
