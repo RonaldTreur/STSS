@@ -62,7 +62,7 @@ Render a STSS file by supplying its path:
 
 ```javascript
 var stss = require('stss');
-stss({
+stss.render({
 	file: stss_filename,
 	success: callback
 	[, options..]
@@ -73,8 +73,19 @@ Or, render STSS data directly:
 
 ```javascript
 var stss = require('stss');
-stss({
+stss.render({
 	data: stss_content,
+	success: callback
+	[, options..]
+});
+```
+
+There is also a `renderSync` method if synchronous execution is required:
+
+```javascript
+var stss = require('stss');
+stss.renderSync({
+	file: stss_filename,
 	success: callback
 	[, options..]
 });
@@ -359,9 +370,9 @@ For those interested, below is a basic outline of how conversion currently works
 
 # TODO for next version (0.2):
 
-[X] Support custom shorthand (user definable)
-[ ] Upon install: Add to alloy.jmk
-[X] Fix: Boolean values are quoted in final TSS
-[X] Add support for shorthand localization function `L()`
-[ ] Add support for custom queries (Alloy 1.4)
-[ ] Add some basic tests
+- [X] Support custom shorthand (user definable)
+- [ ] Upon install: Add to alloy.jmk
+- [X] Fix: Boolean values are quoted in final TSS
+- [X] Add support for shorthand localization function `L()`
+- [X] Add support for custom queries (Alloy 1.4)
+- [ ] Add some basic tests
