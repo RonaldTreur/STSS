@@ -1,0 +1,12 @@
+default:
+    - 'newer:jshint'
+
+dist:
+    - 'jshint:core'
+
+dev:
+    - 'jshint:grunt'
+    - 'watch'
+
+test:
+	- 'mochaTest:test'
