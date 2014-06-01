@@ -45,7 +45,13 @@ Path to look for @import-ed files. Defaults to the *current working directory*.
 ##### --stdout
 Print the resulting TSS to stdout.
 
-##### --h --help
+##### -s --shorthand <file>
+JSON file containing custom shorthand (structured after `shorthand.json`)
+
+##### -v --verbose 
+Print the outout from the various conversion stages
+
+##### -h --help
 Print usage info.
 
 ### API
@@ -349,3 +355,13 @@ For those interested, below is a basic outline of how conversion currently works
 ### AST 2 TSS:
 
 1. Unquote all Ti.\* and Alloy.\* statements
+
+
+# TODO for next version (0.2):
+
+[X] Support custom shorthand (user definable)
+[ ] Upon install: Add to alloy.jmk
+[X] Fix: Boolean values are quoted in final TSS
+[X] Add support for shorthand localization function `L()`
+[ ] Add support for custom queries (Alloy 1.4)
+[ ] Add some basic tests
