@@ -1,0 +1,40 @@
+
+task('pre:compile', stss);
+
+function stss(config, logger) {
+	var fs = require('fs'),
+		path = require('path'),
+		renderer = require('stss');
+
+	var platform = config.alloyConfig.platform,
+		platformDir = platform === 'ios' ? 'iphone' : config.alloyConfig.platform,
+		srcDirs = [
+			config.dir.styles,
+			path.join(config.dir.styles, platformDir)
+		],
+		files;
+
+	srcDirs.forEach(function(dir) {
+		if (fs.existsSync(dir)) {
+			files = fs.readdirSync(dir);
+			files.forEach(function(file) {
+				var inFile = path.join(dir, file),
+					outFile;
+
+				if (/\.stss$/.test(file) && fs.statSync(inFile).isFile()) {
+					outFile = path.join(path.dirname(inFile), path.basename(inFile, '.stss') + '.tss');
+					logger.info('Rendering STSS ' + file + ' to '+ outFile);
+					
+					// Convert STSS to TSS
+					renderer.renderSync({
+						file: inFile,
+						outFile: outFile,
+						error: function(err) {
+							logger.error(err);
+						}
+					});
+				}
+			});
+		}
+	});
+}
