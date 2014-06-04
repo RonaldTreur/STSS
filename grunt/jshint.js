@@ -18,9 +18,12 @@ module.exports = {
 			module: true,
 			exports: true,
 			console: true,
-			process: true
+			process: true,
+			task: true,
+			__dirname: true,
+			__filename: true
 		}
 	},
 	grunt: ['Gruntfile.js', 'grunt/*.js'],
-	core: ['./stss.js', 'lib/**/*.js', 'bin/stss']
+	core: ['./stss.js', 'lib/**/*.js', 'bin/stss', 'scripts/*.js', 'lib/alloy.jmk']
 };
