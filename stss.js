@@ -112,18 +112,20 @@ function parseOptions(options) {
  *
  * Either options.data or options.file need to be provided. If both are supplied, data takes precedence and file
  * will be ignored.
+ * Likewise, either options.outFile or options.success should be defined, or both.
  *
  * This function executes asynchronously.
  * 
  * @param 	{Object}	options				Dictionary containing instructions
  * @param 	{String} 	[options.data]		STSS data, required if options.file is not passed
  * @param 	{String} 	[options.file]		STSS file that is to be converted
- * @param 	{Function} 	options.success 	Callback that will be called upon successful conversion
+ * @param 	{String} 	[options.outFile]	File that is created/overwritten with the generated TSS output
+ * @param 	{Function} 	[options.success] 	Callback that will be called upon successful conversion
  * @param  	{Function}	[options.error]		Callback that will be called if conversion fails
  * @param 	{String} 	[options.shFile]	JSON file that contains additional shorthand notation to use during conversion
  */
 STSS.prototype.render = function(options) {
-	var success = options.success,
+	var success = options.success || function() {},
 		logProcess = this.logProcess.bind(this),
 		tss;
 
@@ -165,18 +167,20 @@ STSS.prototype.render = function(options) {
  *
  * Either options.data or options.file need to be provided. If both are supplied, data takes precedence and file
  * will be ignored.
+ * Likewise, either options.outFile or options.success should be defined, or both.
  *
  * This function executes synchronously.
  * 
  * @param 	{Object}	options				Dictionary containing instructions
  * @param 	{String} 	[options.data]		STSS data, required if options.file is not passed
  * @param 	{String} 	[options.file]		STSS file that is to be converted
- * @param 	{Function} 	options.success 	Callback that will be called upon successful conversion
+ * @param 	{String} 	[options.outFile]	File that is created/overwritten with the generated TSS output
+ * @param 	{Function} 	[options.success]	Callback that will be called upon successful conversion
  * @param  	{Function}	[options.error]		Callback that will be called if conversion fails
  * @param 	{String} 	[options.shFile]	JSON file that contains additional shorthands to use during conversion
  */
 STSS.prototype.renderSync = function(options) {
-	var success = options.success,
+	var success = options.success || function() {},
 		logProcess = this.logProcess.bind(this),
 		data, tss;
 
