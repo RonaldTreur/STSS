@@ -22,7 +22,11 @@ In short: **Knowledge of (at least) CSS is required.**
 
 ## Installation
 
+Got to the root folder of your project (that contains the 'app' subfolder) and type:
+
 `npm install stss`
+
+STSS will try to add itself to your project's the alloy.jmk file (or create it if alloy.jmk does not exist).
 
 ## Usage
 
@@ -372,8 +376,8 @@ For those interested, below is a basic outline of how conversion currently works
 # TODO for next version (0.2):
 
 - [X] Support custom shorthand (user definable)
-- [ ] Upon install: Add to alloy.jmk
+- [X] Upon install: Add to alloy.jmk
 - [X] Fix: Boolean values are quoted in final TSS
 - [X] Add support for shorthand localization function `L()`
 - [X] Add support for custom queries (Alloy 1.4)
-- [ ] Add some basic tests
+- [X] Add some basic tests
