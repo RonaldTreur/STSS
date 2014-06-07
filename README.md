@@ -20,21 +20,39 @@ This means that if you want to use the power STSS brings you, you will have to g
 
 In short: **Knowledge of (at least) CSS is required.**
 
+
 ## Installation
 
-Got to the root folder of your project (that contains the 'app' subfolder) and type:
+There are two ways to install STSS. Globally and locally. If you need STSS for a single project, local would work just fine. If you prefer to use STSS for multiple projects
+
+### Local Installation
+
+Go to the root folder of your project (that contains the 'app' subfolder) and execute:
 
 `npm install stss`
 
-STSS will try to add itself to your project's the alloy.jmk file (or create it if alloy.jmk does not exist).
+During installation STSS will try to add a pre-compile hook to your project's `alloy.jmk` file. If it does not exist, the file will be created.
+
+### Global Installation
+
+From any location execute:
+
+`npm install stss -g`
+
+This will make sure `stss` can be invoked from the CLI from any location. But *-unlike the local installation-* the alloy.jmk file won't be updated with a pre-compile hook. In order to get your STSS files automatically converted you will need to perform an additional command in the root folder of each of your projects (where you want to use STSS).
+
+Go to the root folder of your project (that contains the 'app' subfolder) and execute:
+
+`stss -jmk`
+
 
 ## Usage
 
-STSS can be used via the command line interface (CLI), or by interacting directly with its API.
+STSS can be used via the command line interface (CLI), or by interacting directly with its API. If the pre-compile hook was installed successfully you don't have to do anything at all. STSS will simply be invoked everytime you build your app.
 
 ### Command Line Interface
 
-Most of you will simply want to add STSS to your development stack using the CLI. Below you can find information on how to use it.
+If not working on an Alloy project, most of you will simply want to add STSS to your development stack using the CLI. Below you can find information on how to use it this way.
 
 To convert a STSS file into a TSS file:
 `stss <input.stss> <output.tss>`
@@ -49,6 +67,9 @@ Path to look for @import-ed files. Defaults to the *current working directory*.
 
 ##### --stdout
 Print the resulting TSS to stdout.
+
+##### --jmk
+Install a pre-compile hook for STSS into the app's alloy.jmk file.
 
 ##### -s --shorthand <file>
 JSON file containing custom shorthand (structured after `shorthand.json`)
@@ -108,7 +129,7 @@ stss.renderSync({
 
 ##### success
 
-`success` is a `Function` that will be called upon successful rendering of the STSS to TSS. This option is required!
+`success` is a `Function` that will be called upon successful rendering of the STSS to TSS.
 
 
 ##### error
@@ -178,7 +199,7 @@ could also be written as:
 
 ### Nested Properties
 
-Though TSS does not allow properties to be nested (like SCSS does), it does allow for SCSS-like namespaces. Usually SCSS compiles these to flat properties, but STSS keeps them intact. For example:
+Though TSS does not allow selectors to be nested (like SCSS does), it does allow for SCSS-like namespaces. Usually SCSS compiles these to flat properties, but STSS keeps them intact. For example:
 
 ```css
 Label {
@@ -199,6 +220,8 @@ will compile to:
 	}
 }
 ```
+
+**Note**: Since TSS does not support the CSS concept of child or descendent selectors, take care not to nest actual selectors when writing STSS. Though one of the strengths of SCSS -and STSS won't complain- the resulting TSS will be invalid.
 
 ### Shorthand
 
