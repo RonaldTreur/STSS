@@ -1,5 +1,4 @@
 var fs = require('fs'),
-	chalk = require('chalk'),
 	async = require('async'),
 	EventEmitter = require('events').EventEmitter,
 	util = require('util'),
