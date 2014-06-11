@@ -52,6 +52,6 @@
   },
   "scripts": {
     "test": "grunt test",
-    "install": "node ./scripts/install.js"
+    "postinstall": "node ./scripts/install.js"
   }
 }
