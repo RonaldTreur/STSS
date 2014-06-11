@@ -1,7 +1,7 @@
 {
   "name": "stss",
   "description": "Use SCSS to generate your Titanium Alloy TSS",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "keywords": [
     "titanium",
     "alloy",
