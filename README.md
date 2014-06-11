@@ -23,7 +23,7 @@ In short: **Knowledge of (at least) CSS is required.**
 
 ## Installation
 
-There are two ways to install STSS. Globally and locally. If you need STSS for a single project, local would work just fine. If you prefer to use STSS for multiple projects
+There are two ways to install STSS: *globally* and *locally*. If you need STSS for a single project, local will suit your needs just fine. If you prefer to use STSS for multiple projects and dislike having to install it every time, then feel free to the global method.
 
 ### Local Installation
 
@@ -370,7 +370,15 @@ Label {
 }
 ```
 
-## How does it work internally
+## @import
+
+One of the nice features SCSS offers is the ability to import other SCSS files into the current one. For STSS this features works just fine when the imported file contains pure SCSS. **Unfortunately there is no support yet for importing STSS files**. 
+
+This is due to the fact that STSS files are first converted to SCSS and resolving those `@import` statements occurs at the SCSS-level. It's not (easily) possible to run the conversion from STSS to SCSS at that point anymore.
+
+The most logical solution to fix this is therefor to get STSS to support the `@import "..."` statement itself. Work to that end is being performed as you read this.
+
+## How does all this work internally
 
 For those interested, below is a basic outline of how conversion currently works.
 
@@ -396,11 +404,6 @@ For those interested, below is a basic outline of how conversion currently works
 1. Unquote all Ti.\* and Alloy.\* statements
 
 
-# TODO for next version (0.2):
+## TODO (so far) for next version (0.3):
 
-- [X] Support custom shorthand (user definable)
-- [X] Upon install: Add to alloy.jmk
-- [X] Fix: Boolean values are quoted in final TSS
-- [X] Add support for shorthand localization function `L()`
-- [X] Add support for custom queries (Alloy 1.4)
-- [X] Add some basic tests
+- [ ] Get @import to work in STSS files
