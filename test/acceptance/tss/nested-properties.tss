@@ -1,0 +1,12 @@
+"#title": {
+	color: "black",
+	top: "15dp",
+	font: {
+		fontSize: "14dp",
+		fontWeight: "bold"
+	},
+	shadowOffset: {
+		x: 1,
+		y: 3
+	}
+}

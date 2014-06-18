@@ -1,0 +1,10 @@
+@import "variables.stss", "nested-properties.stss";
+
+Label[platform=ios formFactor=handheld] {
+	backgroundColor: $color;
+	text: 'iPhone';
+}
+
+#info[platform=ios if=Alloy.Globals.isIos7Plus] {
+    font: { textStyle : Ti.UI.TEXT_STYLE_FOOTNOTE }
+}

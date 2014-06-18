@@ -1,0 +1,12 @@
+"b": {
+	color: "#FFF"
+},
+"Label[platform=ios formFactor=handheld]": {
+	backgroundColor: "#FFF",
+	text: "iPhone"
+},
+"#info[platform=ios if=Alloy.Globals.isIos7Plus]": {
+	font: {
+		textStyle: Ti.UI.TEXT_STYLE_FOOTNOTE
+	}
+}
