@@ -40,21 +40,37 @@ function process(stss, options, log) {
 	async.waterfall([
 		function(callback) {
 			var scss = stss2scss(stss, options);
+			if (scss instanceof Error) {
+				callback(scss);
+				return;
+			}
 			log('scss', scss);
 			callback(null, scss);
 		},
 		function(scss, callback) {
 			var css = scss2css(scss, options);
+			if (css instanceof Error) {
+				callback(css);
+				return;
+			}
 			log('css', css);
 			callback(null, css);
 		},
 		function(css, callback) {
 			var json = css2json(css, options);
+			if (json instanceof Error) {
+				callback(json);
+				return;
+			}
 			log('json', JSON.stringify(json, null, 2));
 			callback(null, json);
 		},
 		function(json, callback) {
 			var tss = json2tss(json, options);
+			if (tss instanceof Error) {
+				callback(tss);
+				return;
+			}
 			log('tss', tss);
 			callback(null, tss);
 		},
@@ -80,16 +96,25 @@ function process(stss, options, log) {
  * @param 	{String} 	[options.shFile]	JSON file that contains additional shorthand notation to use during conversion
  * @param 	{Function}	log 				Function that logs the current state of the process
  * @return 	{String} 						TSS structured markup
+ * @throws 	{Error} 						If an error occured during any of the four rendering passes
  */
 function processSync(stss, options, log) {
 	var scss = stss2scss(stss, options);
+	if (scss instanceof Error) { throw scss; }
 	log('scss', scss);
+	
 	var css = scss2css(scss, options);
+	if (css instanceof Error) { throw css; }
 	log('css', css);
+	
 	var json = css2json(css, options);
+	if (json instanceof Error) { throw json; }
 	log('json', JSON.stringify(json, null, 2));
+	
 	var tss = json2tss(json, options);
+	if (tss instanceof Error) { throw tss; }
 	log('tss', tss);
+
 	return tss;
 }
 
