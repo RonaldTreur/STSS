@@ -160,7 +160,7 @@ STSS.prototype.render = function(options) {
 	}
 
 	options.success = function(tss) {
-		if (options.outFile) {
+		if (options.outFile && tss) {
 			fs.writeFile(options.outFile, tss, function(err) {
 				if (err) { return options.error && options.error(err); }
 				success(options.outFile);
@@ -215,7 +215,7 @@ STSS.prototype.renderSync = function(options) {
 	}
 
 	options.success = function(tss) {
-		if (options.outFile) {
+		if (options.outFile && tss) {
 			try {
 				fs.writeFileSync(options.outFile, tss);
 			} catch (err) {
