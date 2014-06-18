@@ -372,11 +372,20 @@ Label {
 
 ## @import
 
-One of the nice features SCSS offers is the ability to import other SCSS files into the current one. For STSS this features works just fine when the imported file contains pure SCSS. **Unfortunately there is no support yet for importing STSS files**. 
+One of the nice features SCSS offers is the ability to import other SCSS files into the current one. As of version 0.2 STSS supports this feature as well for STSS files. 
 
-This is due to the fact that STSS files are first converted to SCSS and resolving those `@import` statements occurs at the SCSS-level. It's not (easily) possible to run the conversion from STSS to SCSS at that point anymore.
+The syntax is identical to SCSS:
+`@import "file.stss";`
 
-The most logical solution to fix this is therefor to get STSS to support the `@import "..."` statement itself. Work to that end is being performed as you read this.
+Multiple files can be imported on one line like this:
+`@import "import1.stss", "import2.stss";`
+
+Of course your STSS files can contain multiple import-statements, dispersed throughout the document.
+
+**Note:** Only files with an `.stss`-extension, or no extension at all will be imported. 
+
+Because the original `@import`-handling of SCSS has been left intact, files with a `.scss` extension will also be imported. **But** these can only contain valid S**C**SS data. To prevent stupid mistakes please always use STSS files and be sure to use the `.stss` extension for your stss files and `@import`-statements!
+
 
 ## How does all this work internally
 
@@ -402,8 +411,3 @@ For those interested, below is a basic outline of how conversion currently works
 ### AST 2 TSS:
 
 1. Unquote all Ti.\* and Alloy.\* statements
-
-
-## TODO (so far) for next version (0.3):
-
-- [ ] Get @import to work in STSS files
