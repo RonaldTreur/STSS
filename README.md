@@ -43,7 +43,7 @@ This will make sure `stss` can be invoked from the CLI from any location. But *-
 
 Go to the root folder of your project (that contains the 'app' subfolder) and execute:
 
-`stss -jmk`
+`stss --jmk`
 
 
 ## Usage
