@@ -31,7 +31,7 @@ function install(root) {
 if (require.main === module) {
     // Only run install if not installed globally
     if (process.env.npm_config_global === "true") {
-        console.log('STSS is installed globally\n' + chalk.blue('Use "stss -jmk" in your project\'s root folder to install the compile-hook.'));
+        console.log('STSS is installed globally\n' + chalk.blue('Use "stss --jmk" in your project\'s root folder to install the compile-hook.'));
         return;
     }
 
