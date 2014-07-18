@@ -167,7 +167,7 @@ Label {
 
 ### Hyphens
 
-Though TSS uses camelCase for property names, the CSS-world is more used to use hyphens instead. For this reason STSS supports both notations. Wherever you normally encounter a mid-word capital letter, you can instead insert a hyphen. For example:
+Though TSS uses camelCase for property names, the CSS-world is more used to seeing hyphens instead. For this reason STSS supports both notations. Wherever you normally encounter a mid-word capital letter, you can instead insert a hyphen. For example:
 
 ```css
 .classname {
