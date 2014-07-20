@@ -205,6 +205,7 @@ STSS.prototype.render = function(options) {
  */
 STSS.prototype.renderSync = function(options) {
 	var success = options.success || function() {},
+		error = options.error || function() {},
 		logProcess = this.logProcess.bind(this),
 		data, tss;
 
@@ -219,7 +220,7 @@ STSS.prototype.renderSync = function(options) {
 			try {
 				fs.writeFileSync(options.outFile, tss);
 			} catch (err) {
-				return options.error && options.error(err);
+				return error(err);
 			}
 			success(options.outFile);
 		} else {
@@ -231,7 +232,7 @@ STSS.prototype.renderSync = function(options) {
 		try {
 			tss = processSync(options.data, options, logProcess);
 		} catch (err) {
-			return options.error && options.error(err);
+			return error(err);
 		}
 		options.success(tss);
 
@@ -240,20 +241,20 @@ STSS.prototype.renderSync = function(options) {
 			try {
 				data = fs.readFileSync(options.file, {encoding: 'utf8'});
 			} catch (err) {
-				return options.error && options.error(err);
+				return error(err);
 			}
 			try {
 				tss = processSync(data, options, logProcess);
 			} catch (err) {
-				return options.error && options.error(err);
+				return error(err);
 			}
 			options.success(tss);
 		} else {
-			return options.error && options.error('Input file does not exist: '+options.file);
+			return error('Input file does not exist: '+options.file);
 		}
 
 	} else {
-		return options.error && options.error('No input file or data supplied');
+		return error('No input file or data supplied');
 	}
 };
 
