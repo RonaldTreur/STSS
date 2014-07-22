@@ -1,0 +1,27 @@
+#header {
+	top: 0;
+	height: 60dp;
+	width: fill;
+	backgroundGradient: {
+		colors: [
+			{
+				color: #B3C618;
+				offset: 0.5;
+			},
+			{
+				color: #BDC47D;
+				offset: 1.0;
+			}
+		];
+	};
+}
+
+test-color1 {
+	color: #B3C618;
+	offset: 0.0;
+}
+
+test-color2 {
+	color: #BDC47D;
+	offset: 1.7;
+}
