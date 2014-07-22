@@ -1,0 +1,48 @@
+"#integers": {
+	width: 30,
+	height: 10
+},
+"#floats": {
+	width: 1.3,
+	height: 0.4
+},
+"#string-integers": {
+	width: "30",
+	height: "10"
+},
+"#string-floats": {
+	width: "1.3",
+	height: ".4"
+},
+"#percentage-integers": {
+	width: "42%",
+	height: "42%"
+},
+"#percentage-floats": {
+	width: "42.5%",
+	height: "42.5%"
+},
+"#string-percentage-integers": {
+	width: "42%",
+	height: "42%"
+},
+"#string-percentage-floats": {
+	width: "42.5%",
+	height: "42.5%"
+},
+"#dp-integers": {
+	width: "30dp",
+	height: "10dp"
+},
+"#dp-floats": {
+	width: "1.3dp",
+	height: "0.4dp"
+},
+"#string-dp-integers": {
+	width: "30dp",
+	height: "10dp"
+},
+"#string-dp-floats": {
+	width: "1.3dp",
+	height: ".4dp"
+}
