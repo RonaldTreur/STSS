@@ -1,4 +1,5 @@
 var fs = require('fs'),
+	path = require('path'),
 	async = require('async'),
 	EventEmitter = require('events').EventEmitter,
 	util = require('util'),
@@ -212,7 +213,7 @@ STSS.prototype.renderSync = function(options) {
 	try {
 		options = parseOptions(options);
 	} catch (err) {
-		return options.error && options.error(err);
+		return error(err);
 	}
 
 	options.success = function(tss) {
@@ -228,7 +229,7 @@ STSS.prototype.renderSync = function(options) {
 		}
  	};
 
- 	if (options.data) {
+	if (options.data) {
 		try {
 			tss = processSync(options.data, options, logProcess);
 		} catch (err) {
@@ -237,6 +238,9 @@ STSS.prototype.renderSync = function(options) {
 		options.success(tss);
 
 	} else if (options.file) {
+		// Save the basename for potential use in error messages
+		options.filename = path.basename(options.file);
+		
 		if (fs.existsSync(options.file)) {
 			try {
 				data = fs.readFileSync(options.file, {encoding: 'utf8'});
