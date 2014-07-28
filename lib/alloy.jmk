@@ -1,7 +1,7 @@
 
 task('pre:compile', stss);
 
-function stss(config, logger) { //--v0.1.3
+function stss(config, logger) { //--v0.2.1
 	var fs = require('fs'),
 		path = require('path'),
 		renderer;
