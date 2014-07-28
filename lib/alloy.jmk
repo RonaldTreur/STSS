@@ -10,7 +10,7 @@ function stss(config, logger) { //--v0.1.3
 		renderer = require('stss');
 		logger.info('Loading global STSS renderer');
 	} catch (err) {
-		renderer = require(process.cwd()+'/node_modules/stss');
+		renderer = require(path.join(process.cwd(), 'node_modules', 'stss'));
 		logger.info('Loading local STSS renderer');
 	}
 
@@ -38,7 +38,17 @@ function stss(config, logger) { //--v0.1.3
 						file: inFile,
 						outFile: outFile,
 						error: function(err) {
-							logger.error(err);
+							if (err.title && err.line) {
+								logger.error('STSS: ' + err.title);
+								logger.error('');
+								logger.error(err.line);
+								logger.error('');
+								logger.error(err.processed);
+							} else {
+								logger.error(err.message);
+							}
+							err = {message: 'Error STSS conversion failed', toString: function() {return this.message;}};
+							throw (err);
 						}
 					});
 				}
