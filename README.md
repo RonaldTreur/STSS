@@ -23,7 +23,7 @@ In short: **Knowledge of (at least) CSS is required.**
 
 ## Installation
 
-There are two ways to install STSS: *globally* and *locally*. If you need STSS for a single project, local will suit your needs just fine. If you prefer to use STSS for multiple projects and dislike having to install it every time, then feel free to the global method.
+There are two ways to install STSS: *globally* and *locally*. If you need STSS for a single project, local will suit your needs just fine. If you prefer to use STSS for multiple projects and dislike having to install it every time, then feel free useto the global method.
 
 ### Local Installation
 
@@ -384,7 +384,7 @@ Of course your STSS files can contain multiple import-statements, dispersed thro
 
 **Note:** Only files with an `.stss`-extension, or no extension at all will be imported. 
 
-Because the original `@import`-handling of SCSS has been left intact, files with a `.scss` extension will also be imported. **But** these can only contain valid S**C**SS data. To prevent stupid mistakes please always use STSS files and be sure to use the `.stss` extension for your stss files and `@import`-statements!
+Because the original `@import`-handling of SCSS has been left intact, files with a `.scss` extension will also be imported. **But** these can only contain valid S<b>C</b>SS data. To prevent stupid mistakes please always use STSS files and be sure to use the `.stss` extension for your stss files and `@import`-statements!
 
 
 ## How does all this work internally
@@ -402,12 +402,12 @@ For those interested, below is a basic outline of how conversion currently works
 1. Standard conversion using libsass
 
 
-### CSS 2 AST:
+### CSS 2 JSON:
 
 1. Convert all hyphenated terms to JSON objects
 2. Convert all @media queries into square bracketed queries that are then glued to the selector
 3. Expand all shorthand forms (e.g. 'ios' and 'center')
 
-### AST 2 TSS:
+### JSON 2 TSS:
 
 1. Unquote all Ti.\* and Alloy.\* statements
