@@ -21,17 +21,17 @@ function install(root) {
                 console.log(chalk.green('Hook was successfully installed'));
             } else {
                 try {
-                    var newVersion = process.env.npm_package_version.split('.'),
+                    var reFunction = /function stss\(config, logger\) { \/\/--v\d+\.\d+\.\d+([\s\S]+?)^}$/gm,
+                        reFunctionVersion = /function stss\(config, logger\) { \/\/--v(\d+)\.(\d+)\.(\d+)/,
+                        newSource = fs.readFileSync(src, {encoding: 'utf8'}),
+                        newVersion = newSource.match(reFunctionVersion).slice(1), //process.env.npm_package_version.split('.'),
                         newVersionNr = (newVersion[0]*1000 + newVersion[1])*1000 + newVersion[2],
-                        installedVersion = content.match(/function stss\(config, logger\) { \/\/--v(\d+)\.(\d+)\.(\d+)/).slice(1),
+                        installedVersion = content.match(reFunctionVersion).slice(1),
                         installedVersionNr = (installedVersion[0]*1000 + installedVersion[1])*1000 + installedVersion[2];
 
                     if (installedVersionNr >= newVersionNr) {
-                        console.log(chalk.yellow('Hook was already installed'));
+                        console.log(chalk.green('Hook was already installed'));
                     } else {
-                        var newSource = fs.readFileSync(src, {encoding: 'utf8'}),
-                            reFunction = /function stss\(config, logger\) { \/\/--v\d+\.\d+\.\d+([\s\S]+?)^}$/gm;
-
                         newSource = newSource.match(reFunction)[0];
                         content = content.replace(reFunction, newSource);
                         fs.writeFileSync(dst, content);
