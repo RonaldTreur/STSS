@@ -28,7 +28,7 @@
 		"ios": "platform=ios",
 		"mobileweb": "platform=mobileweb",
 		"handheld": "formFactor=handheld",
-		"tablet": "formFactor=handheld"
+		"tablet": "formFactor=tablet"
 	},
 	"queryValues": {}
 }
