@@ -1,0 +1,73 @@
+.empty1 {
+	text: ''
+}
+
+.empty2 {
+	text: ""
+}
+
+.confusing1 {
+	text: '""'
+}
+
+.confusing2 {
+	text: "''"
+}
+
+.simple1 {
+	text: "simple"
+}
+
+.simple2 {
+	text: 'simple'
+}
+
+.spaced1 {
+	text: "simple spaced"
+}
+
+.spaced1 {
+	text: 'simple spaced'
+}
+
+.backslash {
+	text: "\aa"
+}
+
+.backslash {
+	text: '\aa'
+}
+
+.non-alpha1 {
+	text: "!@#$%^&*()_+-=[]{};:\|,<>/?±§`~"
+}
+
+.non-alpha2 {
+	text: '!@#$%^&*()_+-=[]{};:\|,<>/?±§`~'
+}
+
+.path1 {
+	text: "/images/transparent.png";
+}
+
+.path2 {
+	text: '/images/transparent.png';
+}
+
+.array1 {
+	text: ["simple", "simple spaced"]
+}
+
+.array2 {
+	text: ['simple', 'simple spaced']
+}
+
+$variable1: "onze douze treize";
+.variable1 {
+	text: $variable1;
+}
+
+$variable2: 'onze douze treize';
+.variable2 {
+	text: $variable2;
+}
