@@ -225,16 +225,15 @@ will compile to:
 
 ### Shorthand
 
-Property names used in TSS are directly derived from their Titanium API counterparts. This makes perfect sense, but some of these counterparts are quite lengthy. Especially when you need to use constants. Furthermore, now that you'll be using CSS-style notation for your markup, it might be nice to use terms you are already familiar with from your CSS-writing days. For these reasons STSS comes with support for abbreviations, or *shorthand* notation.
+Property names used in TSS are directly derived from their Titanium API counterparts. This makes perfect sense, but some of these names are quite lengthy. The value you are to assign them can grow even lengthier however. Especially when you need to use constants. Furthermore, now that you'll be using CSS-style notation for your markup, it might be nice to use terms you are already familiar with from your CSS-writing days. For these reasons STSS comes with support for abbreviations, or *shorthand* notation.
 
-In order to not break future TSS (Titanium) versions, shorthands are bound to certain property names of namespace names.
+In order to not break future TSS (Titanium) versions, shorthands are bound to certain property-, or namespace names.
 
 
 #### Namespaced Property Names
 
-Looking at the nested property example from the previous section, you might wonder why the property names are prefixed with 'font'. After all, being inside a namespace named 'font' this seems a bit redundant. This is however due to to Titanium's [Font](http://docs.appcelerator.com/titanium/latest/#!/api/Font) API, which TSS simply mirrors.
+Fortunately most property names are pretty similar to their CSS-equivalent. When it comes to nesting however, some (sub-)propertynames are longer than their CSS-counterparts. For some of these properties, STSS remedies this. Take for example the [Font-property](http://docs.appcelerator.com/titanium/latest/#!/api/Font)
 
-Using STSS you can however shorten this to be more in line with SCSS.
 
 ##### font
 
@@ -250,15 +249,15 @@ For example:
 ```css
 Label {
 	font: {
-		size: 12dp,
-		weight: bold
+		size: 12dp;
+		weight: bold;
 	}
 }
 ```
 
 #### Property Values
 
-A few properties have been pre-selected to support shorthand property values out of the box. These properties are listed below, each containing a list of shorthand values and their original counterparts:
+Property values are a 'bigger issue'. Especially due to the required use of constants. Below is a list of all properties whose values can be written in a shorter, more CSS-like variant.
 
 
 ##### textAlign
@@ -308,7 +307,7 @@ For example:
 
 ```css
 Label[ios handheld] {
-	backgroundColor: #f00;
+	background-color: #f00;
 	text: 'iPhone';
 }
 ```
@@ -321,7 +320,7 @@ TSS queries are probably the area in which TSS differs most significantly from C
 
 ```css
 Label[platform=ios formFactor=handheld] {
-	backgroundColor: #f00;
+	background-color: #f00;
 	text: 'iPhone';
 }
 ```
@@ -342,7 +341,7 @@ Label[platform=ios][formFactor=handheld] {
 ```css
 @media (platform: ios) and (formFactor: handheld) {
 	Label {
-		backgroundColor: #f00;
+		background-color: #f00;
 		text: 'iPhone';
 	}
 }
@@ -353,7 +352,7 @@ Or using shorthand:
 ```css
 @media ios and (handheld) {
 	Label {
-		backgroundColor: #f00;
+		background-color: #f00;
 		text: 'iPhone';
 	}
 }
@@ -364,7 +363,7 @@ Or using shorthand:
 ```css
 Label {
 	@media (platform: ios) and (formFactor: handheld) {
-		backgroundColor: #f00;
+		background-color: #f00;
 		text: 'iPhone';
 	}
 }
