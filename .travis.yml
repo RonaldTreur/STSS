@@ -7,3 +7,5 @@ deploy:
     secure: OHrx0Cyty0kjYzcHyfL/LuTwZ6sVnfo4JSCNaS3lf+qM5l/JH8N3D5BLPY0TewyrpgGY6Spc5Wy2QXABLYM2sUU+KRbjtZLpdDTvpj8u5A2HGMSlMdGDMFnLfgK3owiLIsCR12j3iakAS8nD6CbLJs4ho/HdEmwf5kPDLOMaz8E=
   email: ronald@lostparticle.net
   provider: npm
+  on:
+    tags: true
