@@ -17,7 +17,58 @@
 }
 
 #orient {
+	backgroundGradient: {
+		colors: [
+			{
+				color: #B3C618;
+				offset: 0.5;
+			},
+			{
+				color: #BDC47D;
+				offset: 1.0;
+			}
+		];
+	};
 	orientationModes: [Ti.UI.PORTRAIT, Ti.UI.UPSIDE_PORTRAIT, Ti.UI.LANDSCAPE_LEFT, Ti.UI.LANDSCAPE_RIGHT];
+	extendEdges: [Ti.UI.EXTEND_EDGE_ALL];
+}
+
+@media ios {
+	#orient2 {
+		backgroundGradient: {
+			colors: [
+				{
+					color: #B3C618;
+					offset: 0.5;
+				},
+				{
+					color: #BDC47D;
+					offset: 1.0;
+				}
+			];
+		};
+		orientationModes: [Ti.UI.PORTRAIT, Ti.UI.UPSIDE_PORTRAIT, Ti.UI.LANDSCAPE_LEFT, Ti.UI.LANDSCAPE_RIGHT];
+		extendEdges: [Ti.UI.EXTEND_EDGE_ALL];
+	}
+}
+
+#orient3 {
+	@media ios {
+		backgroundGradient: {
+			colors: [
+				{
+					color: #B3C618;
+					offset: 0.5;
+				},
+				{
+					color: #BDC47D;
+					offset: 1.0;
+				}
+			];
+		};
+		orientationModes: [Ti.UI.PORTRAIT, Ti.UI.UPSIDE_PORTRAIT, Ti.UI.LANDSCAPE_LEFT, Ti.UI.LANDSCAPE_RIGHT];
+	}
+	extendEdges: [Ti.UI.EXTEND_EDGE_ALL];
 }
 
 test-color1 {

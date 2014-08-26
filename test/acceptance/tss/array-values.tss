@@ -13,6 +13,44 @@
 	}
 },
 "#orient": {
+	backgroundGradient: {
+		colors: [{
+			color: "#B3C618",
+			offset: 0.5
+		},{
+			color: "#BDC47D",
+			offset: 1
+		}]
+	},
+	orientationModes: [Ti.UI.PORTRAIT,Ti.UI.UPSIDE_PORTRAIT,Ti.UI.LANDSCAPE_LEFT,Ti.UI.LANDSCAPE_RIGHT],
+	extendEdges: [Ti.UI.EXTEND_EDGE_ALL]
+},
+"#orient2[platform=ios]": {
+	backgroundGradient: {
+		colors: [{
+			color: "#B3C618",
+			offset: 0.5
+		},{
+			color: "#BDC47D",
+			offset: 1
+		}]
+	},
+	orientationModes: [Ti.UI.PORTRAIT,Ti.UI.UPSIDE_PORTRAIT,Ti.UI.LANDSCAPE_LEFT,Ti.UI.LANDSCAPE_RIGHT],
+	extendEdges: [Ti.UI.EXTEND_EDGE_ALL]
+},
+"#orient3": {
+	extendEdges: [Ti.UI.EXTEND_EDGE_ALL]
+},
+"#orient3[platform=ios]": {
+	backgroundGradient: {
+		colors: [{
+			color: "#B3C618",
+			offset: 0.5
+		},{
+			color: "#BDC47D",
+			offset: 1
+		}]
+	},
 	orientationModes: [Ti.UI.PORTRAIT,Ti.UI.UPSIDE_PORTRAIT,Ti.UI.LANDSCAPE_LEFT,Ti.UI.LANDSCAPE_RIGHT]
 },
 "test-color1": {
