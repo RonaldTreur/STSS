@@ -8,4 +8,5 @@ deploy:
   email: ronald@lostparticle.net
   provider: npm
   on:
+    all_branches: true
     tags: true
