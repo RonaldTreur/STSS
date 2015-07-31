@@ -1,0 +1,21 @@
+"quoted": {
+	backgroundImage: "image.png"
+},
+"nonquoted": {
+	backgroundImage: "image.png"
+},
+"quotedFSPath": {
+	backgroundImage: "/folder/image.png"
+},
+"nonquotedFSPath": {
+	backgroundImage: "/folder/image.png"
+},
+"quotedBSPath": {
+	backgroundImage: "\folder\image.png"
+},
+"nonquotedBSPath": {
+	backgroundImage: "\folder\image.png"
+},
+"constant": {
+	backgroundImage: Ti.some.constant
+}

@@ -26,15 +26,15 @@
 	text: "simple spaced"
 }
 
-.spaced1 {
+.spaced2{
 	text: 'simple spaced'
 }
 
-.backslash {
+.backslash1 {
 	text: "\aa"
 }
 
-.backslash {
+.backslash2 {
 	text: '\aa'
 }
 

@@ -19,20 +19,20 @@
 ".spaced1": {
 	text: "simple spaced"
 },
-".spaced1": {
+".spaced2": {
 	text: "simple spaced"
 },
-".backslash": {
-	text: "\\aa"
+".backslash1": {
+	text: "\aa"
 },
-".backslash": {
-	text: "\\aa"
+".backslash2": {
+	text: "\aa"
 },
 ".non-alpha1": {
-	text: "!@#$%^&*()_+-=[]{};:\\|,<>/?±§`~"
+	text: "!@#$%^&*()_+-=[]{};:\|,<>/?±§`~"
 },
 ".non-alpha2": {
-	text: "!@#$%^&*()_+-=[]{};:\\|,<>/?±§`~"
+	text: "!@#$%^&*()_+-=[]{};:\|,<>/?±§`~"
 },
 ".path1": {
 	text: "/images/transparent.png"
