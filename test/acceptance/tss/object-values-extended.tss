@@ -1,0 +1,34 @@
+".set": {
+	font: {
+		fontFamily: "Arial",
+		fontSize: "12dp"
+	},
+	backgroundGradient: {
+		type: "linear",
+		startPoint: {
+			x: "5%",
+			y: "40%"
+		}
+	}
+},
+".superset": {
+	font: {
+		fontFamily: "Arial",
+		fontSize: "12dp"
+	},
+	backgroundGradient: {
+		type: "linear",
+		startPoint: {
+			x: "5%",
+			y: "40%"
+		}
+	}
+},
+".superset": {
+	backgroundGradient: {
+		endPoint: {
+			x: "95%",
+			y: "100%"
+		}
+	}
+}

@@ -1,0 +1,23 @@
+.set {
+	font: {
+		family: 'Arial';
+		size: '12dp';
+	}
+	backgroundGradient: {
+		type: linear;
+		startPoint: {
+			x: 5%;
+			y: 40%;
+		};
+	};
+}
+
+.superset {
+	@extend .set;
+	backgroundGradient: {
+		endPoint: {
+			x: 95%;
+			y: 100%;
+		};
+	}
+}
