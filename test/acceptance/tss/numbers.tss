@@ -36,7 +36,7 @@
 },
 "#dp-floats": {
 	width: "1.3dp",
-	height: "0.4dp"
+	height: ".4dp"
 },
 "#string-dp-integers": {
 	width: "30dp",
