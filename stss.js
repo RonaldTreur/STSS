@@ -54,6 +54,9 @@ function process(stss, options, log) {
 				callback(css);
 				return;
 			}
+			if (css instanceof Buffer) {
+				css = css.toString();
+			}
 			log('css', css);
 			callback(null, css);
 		},
@@ -103,15 +106,16 @@ function processSync(stss, options, log) {
 	var scss = stss2scss(stss, options);
 	if (scss instanceof Error) { throw scss; }
 	log('scss', scss);
-	
+
 	var css = scss2css(scss, options);
 	if (css instanceof Error) { throw css; }
+	if (css instanceof Buffer) { css = css.toString(); }
 	log('css', css);
-	
+
 	var json = css2json(css, options);
 	if (json instanceof Error) { throw json; }
 	log('json', JSON.stringify(json, null, 2));
-	
+
 	var tss = json2tss(json, options);
 	if (tss instanceof Error) { throw tss; }
 	log('tss', tss);
