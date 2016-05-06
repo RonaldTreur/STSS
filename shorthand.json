@@ -2,15 +2,11 @@
 	"propertyValues": {
 		"width": {
 			"fill": "Ti.UI.FILL",
-			"size": "Ti.UI.SIZE",
-			"deviceHeight": "Alloy.Globals.deviceHeight",
-			"deviceWidth": "Alloy.Globals.deviceWidth"
+			"size": "Ti.UI.SIZE"
 		},
 		"height": {
 			"fill": "Ti.UI.FILL",
-			"size": "Ti.UI.SIZE",
-			"deviceHeight": "Alloy.Globals.deviceHeight",
-			"deviceWidth": "Alloy.Globals.deviceWidth"
+			"size": "Ti.UI.SIZE"
 		},
 		"textAlign": {
 			"left": "Ti.UI.TEXT_ALIGNMENT_LEFT",
@@ -40,7 +36,11 @@
 		"keyboardAppearance": {
 			"light":"Titanium.UI.KEYBOARD_APPEARANCE_LIGHT",
 			"dark":"Titanium.UI.KEYBOARD_APPEARANCE_DARK"
-		}
+		},
+    "background":{
+      "image": "backgroundImage",
+      "color": "backgroundColor"
+    }
 	},
 	"propertyNames": {
 		"font": {
@@ -66,8 +66,4 @@
 		"tablet": "formFactor=tablet"
 	},
 	"queryValues": {},
-  "replacers": {
-    "$": "Alloy.CFG.",
-    "%": "Titanium.UI."
-  }
 }
