@@ -65,5 +65,9 @@
 		"handheld": "formFactor=handheld",
 		"tablet": "formFactor=tablet"
 	},
-	"queryValues": {}
+	"queryValues": {},
+  "replacers": {
+    "$": "Alloy.CFG.",
+    "%": "Titanium.UI."
+  }
 }
