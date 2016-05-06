@@ -36,11 +36,7 @@
 		"keyboardAppearance": {
 			"light":"Titanium.UI.KEYBOARD_APPEARANCE_LIGHT",
 			"dark":"Titanium.UI.KEYBOARD_APPEARANCE_DARK"
-		},
-    "background":{
-      "image": "backgroundImage",
-      "color": "backgroundColor"
-    }
+		}
 	},
 	"propertyNames": {
 		"font": {
@@ -48,13 +44,6 @@
 			"size": "fontSize",
 			"style": "fontStyle",
 			"weight": "fontWeight"
-		},
-		"border": {
-			"style": "borderStyle",
-			"width": "borderWidth",
-			"weight": "borderWidth",
-			"radius": "borderRadius",
-			"color": "borderColor"
 		}
 	},
 	"queries": {
@@ -65,5 +54,5 @@
 		"handheld": "formFactor=handheld",
 		"tablet": "formFactor=tablet"
 	},
-	"queryValues": {},
+	"queryValues": {}
 }
