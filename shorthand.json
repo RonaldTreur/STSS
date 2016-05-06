@@ -2,11 +2,15 @@
 	"propertyValues": {
 		"width": {
 			"fill": "Ti.UI.FILL",
-			"size": "Ti.UI.SIZE"
+			"size": "Ti.UI.SIZE",
+			"deviceHeight": "Alloy.Globals.deviceHeight",
+			"deviceWidth": "Alloy.Globals.deviceWidth"
 		},
 		"height": {
 			"fill": "Ti.UI.FILL",
-			"size": "Ti.UI.SIZE"
+			"size": "Ti.UI.SIZE",
+			"deviceHeight": "Alloy.Globals.deviceHeight",
+			"deviceWidth": "Alloy.Globals.deviceWidth"
 		},
 		"textAlign": {
 			"left": "Ti.UI.TEXT_ALIGNMENT_LEFT",
@@ -19,6 +23,23 @@
 			"solid": "Ti.UI.INPUT_BORDERSTYLE_LINE",
 			"none": "Ti.UI.INPUT_BORDERSTYLE_NONE",
 			"rounded": "Ti.UI.INPUT_BORDERSTYLE_ROUNDED"
+		},
+		"keyboardType": {
+			"email": "Titanium.UI.KEYBOARD_TYPE_EMAIL",
+			"default": "Titanium.UI.KEYBOARD_TYPE_DEFAULT",
+			"namephone": "Titanium.UI.KEYBOARD_TYPE_NAMEPHONE_PAD",
+			"punctuation": "Titanium.UI.KEYBOARD_TYPE_NUMBERS_PUNCTUATION",
+			"number": "Titanium.UI.KEYBOARD_TYPE_NUMBER_PAD",
+			"phone": "Titanium.UI.KEYBOARD_TYPE_PHONE_PAD",
+			"twitter": "Titanium.UI.KEYBOARD_TYPE_TWITTER ",
+			"url": "Titanium.UI.KEYBOARD_TYPE_URL",
+			"websearch": "Titanium.UI.KEYBOARD_TYPE_WEBSEARCH",
+			"decimal": "Titanium.UI.KEYBOARD_TYPE_DECIMAL_PAD",
+			"ascii": "Titanium.UI.KEYBOARD_TYPE_ASCII"
+		},
+		"keyboardAppearance": {
+			"light":"Titanium.UI.KEYBOARD_APPEARANCE_LIGHT",
+			"dark":"Titanium.UI.KEYBOARD_APPEARANCE_DARK"
 		}
 	},
 	"propertyNames": {
