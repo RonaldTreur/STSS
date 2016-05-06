@@ -12,6 +12,13 @@
 			"left": "Ti.UI.TEXT_ALIGNMENT_LEFT",
 			"right": "Ti.UI.TEXT_ALIGNMENT_RIGHT",
 			"center": "Ti.UI.TEXT_ALIGNMENT_CENTER"
+		},
+		"borderStyle": {
+			"bezel": "Ti.UI.INPUT_BORDERSTYLE_BEZEL",
+			"line": "Ti.UI.INPUT_BORDERSTYLE_LINE",
+			"solid": "Ti.UI.INPUT_BORDERSTYLE_LINE",
+			"none": "Ti.UI.INPUT_BORDERSTYLE_NONE",
+			"rounded": "Ti.UI.INPUT_BORDERSTYLE_ROUNDED"
 		}
 	},
 	"propertyNames": {
@@ -20,6 +27,13 @@
 			"size": "fontSize",
 			"style": "fontStyle",
 			"weight": "fontWeight"
+		},
+		"border": {
+			"style": "borderStyle",
+			"width": "borderWidth",
+			"weight": "borderWidth",
+			"radius": "borderRadius",
+			"color": "borderColor"
 		}
 	},
 	"queries": {
