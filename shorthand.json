@@ -36,7 +36,11 @@
 		"keyboardAppearance": {
 			"light":"Titanium.UI.KEYBOARD_APPEARANCE_LIGHT",
 			"dark":"Titanium.UI.KEYBOARD_APPEARANCE_DARK"
-		}
+		},
+    "statusBarStyle": {
+      "light": "Ti.UI.iPhone.StatusBar.LIGHT_CONTENT",
+      "dark": "Ti.UI.iPhone.StatusBar.DARK_CONTENT"
+    }
 	},
 	"propertyNames": {
 		"font": {
