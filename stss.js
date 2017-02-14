@@ -35,6 +35,7 @@ util.inherits(STSS, EventEmitter);
  * @param 	{Function} 	options.success 	Callback that will be called upon successful conversion
  * @param  	{Function}	[options.error]		Callback that will be called if conversion fails
  * @param 	{String} 	[options.shFile]	JSON file that contains additional shorthand notation to use during conversion
+ * @param 	{Boolean} 	[options.skipImportedRules]	Whether or not stss rules from imported files should be included or not
  * @param 	{Function}	log 				Function that logs the current state of the process
  */
 function process(stss, options, log) {
@@ -79,7 +80,7 @@ function process(stss, options, log) {
 			callback(null, tss);
 		},
 	], function(err, tss) {
-		if (err) { 
+		if (err) {
 			options.error && options.error(err);
 		} else {
 			options.success(tss);
@@ -98,6 +99,7 @@ function process(stss, options, log) {
  * @param 	{Function} 	options.success 	Callback that will be called upon successful conversion
  * @param  	{Function}	[options.error]		Callback that will be called if conversion fails
  * @param 	{String} 	[options.shFile]	JSON file that contains additional shorthand notation to use during conversion
+ * @param 	{Boolean} 	[options.skipImportedRules]	Whether or not stss rules from imported files should be included or not
  * @param 	{Function}	log 				Function that logs the current state of the process
  * @return 	{String} 						TSS structured markup
  * @throws 	{Error} 						If an error occured during any of the four rendering passes
@@ -144,7 +146,7 @@ function parseOptions(options) {
  * Likewise, either options.outFile or options.success should be defined, or both.
  *
  * This function executes asynchronously.
- * 
+ *
  * @param 	{Object}	options				Dictionary containing instructions
  * @param 	{String} 	[options.data]		STSS data, required if options.file is not passed
  * @param 	{String} 	[options.file]		STSS file that is to be converted
@@ -152,6 +154,7 @@ function parseOptions(options) {
  * @param 	{Function} 	[options.success] 	Callback that will be called upon successful conversion
  * @param  	{Function}	[options.error]		Callback that will be called if conversion fails
  * @param 	{String} 	[options.shFile]	JSON file that contains additional shorthand notation to use during conversion
+ * @param 	{Boolean} 	[options.skipImportedRules]	Whether or not stss rules from imported files should be included or not
  */
 STSS.prototype.render = function(options) {
 	var success = options.success || function() {},
@@ -199,7 +202,7 @@ STSS.prototype.render = function(options) {
  * Likewise, either options.outFile or options.success should be defined, or both.
  *
  * This function executes synchronously.
- * 
+ *
  * @param 	{Object}	options				Dictionary containing instructions
  * @param 	{String} 	[options.data]		STSS data, required if options.file is not passed
  * @param 	{String} 	[options.file]		STSS file that is to be converted
@@ -207,6 +210,7 @@ STSS.prototype.render = function(options) {
  * @param 	{Function} 	[options.success]	Callback that will be called upon successful conversion
  * @param  	{Function}	[options.error]		Callback that will be called if conversion fails
  * @param 	{String} 	[options.shFile]	JSON file that contains additional shorthands to use during conversion
+ * @param 	{Boolean} 	[options.skipImportedRules]	Whether or not stss rules from imported files should be included or not
  */
 STSS.prototype.renderSync = function(options) {
 	var success = options.success || function() {},
@@ -244,7 +248,7 @@ STSS.prototype.renderSync = function(options) {
 	} else if (options.file) {
 		// Save the basename for potential use in error messages
 		options.filename = path.basename(options.file);
-		
+
 		if (fs.existsSync(options.file)) {
 			try {
 				data = fs.readFileSync(options.file, {encoding: 'utf8'});
@@ -268,7 +272,7 @@ STSS.prototype.renderSync = function(options) {
 
 /**
  * Log the conversion step that was just completed.
- * 
+ *
  * @param  {String} 	conversion 	Type of conversion just completed
  * @param  {String} 	output 		Output of the phase that was just finished
  * @fires conversionStep
